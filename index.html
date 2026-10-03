@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To'y Taklifnomasi | Shuhratbek & Shahnoza</title>
+  
+  <!-- Shriftlar -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Ikonkalar -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- AOS (Scroll Animatsiya) Kutubxonasi -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Fon musiqasi: Ishonchli klassik to'y kompozitsiyasi -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=wedding-115083.mp3" type="audio/mp3">
+  </audio>
+  
+  <!-- Musiqa boshqaruvi tugmasi -->
+  <button id="musicToggle" class="music-btn" aria-label="Musiqa boshqaruvi">
+    <i class="fa-solid fa-compact-disc"></i>
+  </button>
+
+  <!-- Gul barglari tushish maydoni -->
+  <div id="petalContainer" class="petal-container"></div>
+
+  <!-- 1-bosqich: Dabdabali Konvert (Modal Overlay) -->
+  <div id="envelopeOverlay" class="overlay">
+    <div class="wax-seal-wrapper">
+      <div class="envelope-card">
+        <div class="gold-frame">
+          <p class="sub-lead">Taklifnoma</p>
+          <h1 class="script-font">Shuhratbek <br>&amp;<br> Shahnoza</h1>
+          <p class="tagline">Baxtli kunimiz guvohi bo'ling</p>
+          <button id="openBtn" class="open-btn">
+            <i class="fa-solid fa-envelope-open-text"></i> Ochish
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2-bosqich: Asosiy Taklifnoma Sahifasi -->
+  <main class="main-container">
+    
+    <!-- Hero qismi -->
+    <header class="hero-section" data-aos="fade-down" data-aos-duration="1200">
+      <div class="divider"><span>❦</span></div>
+      <h3 class="bismillah">Bismillahir Rohmanir Rohiym</h3>
+      <p class="lead-text">Hurmatli va qadrli mehmonimiz!</p>
+      <p class="invitation-body">
+        Sizni hayotimizning unutilmas va tarixiy lahzalari — farzandlarimiz
+      </p>
+      <h1 class="couple-names script-font" data-aos="zoom-in" data-aos-duration="1500">Shuhratbek &amp; Shahnoza</h1>
+      <p class="invitation-body">
+        ning nikoh to'yi munosabati bilan yoziladigan dasturxonimizga lutfan taklif etamiz.
+      </p>
+      <div class="divider"><span>❦</span></div>
+    </header>
+
+    <!-- Ortga hisoblash taymeri -->
+    <section class="countdown-section" data-aos="fade-up" data-aos-duration="1000">
+      <h3 class="section-title">Quvonchli kunga qoldi:</h3>
+      <div id="countdown" class="countdown-grid">
+        <div class="time-box"><span id="days">00</span><label>Kun</label></div>
+        <div class="time-box"><span id="hours">00</span><label>Soat</label></div>
+        <div class="time-box"><span id="minutes">00</span><label>Daqiqa</label></div>
+        <div class="time-box"><span id="seconds">00</span><label>Soniya</label></div>
+      </div>
+    </section>
+
+    <!-- Tadbir dasturi (Interaktiv Timeline) -->
+    <section class="program-section" data-aos="fade-up" data-aos-duration="1000">
+      <h3 class="section-title">Tantana dasturi</h3>
+      <div class="timeline">
+        
+        <div class="timeline-item" data-aos="fade-right" data-aos-duration="800">
+          <div class="timeline-icon"><i class="fa-regular fa-calendar-check"></i></div>
+          <div class="timeline-content">
+            <h4>To'y sanasi</h4>
+            <p>24-25 Oktyabr, 2026-yil</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-left" data-aos-duration="800" data-aos-delay="150">
+          <div class="timeline-icon"><i class="fa-solid fa-ring"></i></div>
+          <div class="timeline-content">
+            <h4>Nikoh marosimi (Zaks)</h4>
+            <p>25-Oktyabr, Soat 09:00</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-right" data-aos-duration="800" data-aos-delay="300">
+          <div class="timeline-icon"><i class="fa-solid fa-champagne-glasses"></i></div>
+          <div class="timeline-content">
+            <h4>To'y tantanasi va bazm</h4>
+            <p>Soat 16:00 da</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-left" data-aos-duration="800" data-aos-delay="450">
+          <div class="timeline-icon"><i class="fa-solid fa-house-chimney"></i></div>
+          <div class="timeline-content">
+            <h4>Manzil</h4>
+            <p>Yangiqo'rg'on tumani, Yumaloq ko'chasi 5-uy</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Jonli Xarita qismi -->
+    <section class="map-section" data-aos="zoom-in-up" data-aos-duration="1000">
+      <h3 class="section-title">Manzil va Geolokatsiya</h3>
+      <div class="map-container">
+        <!-- Yangiqo'rg'on koordinatalari bo'yicha integratsiyalangan xarita -->
+        <iframe 
+          title="Lokatsiya Xaritasi"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=71.7200%2C41.1800%2C71.7600%2C41.2100&amp;layer=mapnik&amp;marker=41.1963%2C71.7412" 
+          loading="lazy">
+        </iframe>
+      </div>
+      <a href="https://goo.gl/maps/naH3B3SPq66eqKa97?g_st=atm" target="_blank" rel="noopener noreferrer" class="map-direct-btn">
+        <i class="fa-solid fa-location-arrow"></i> Google Xaritada yo'nalish olish
+      </a>
+    </section>
+
+    <footer class="footer" data-aos="fade-in" data-aos-duration="1200">
+      <div class="divider"><span>❦</span></div>
+      <p>Sizning tashrifingiz baxtimizga yanada quvonch bag'ishlaydi!</p>
+    </footer>
+
+  </main>
+
+  <!-- Skriptlar -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,352 @@
+:root {
+  --gold-primary: #d4af37;
+  --gold-dark: #aa820a;
+  --gold-light: #f3e5ab;
+  --bg-creme: #fcfbf7;
+  --text-dark: #2c2c2c;
+  --text-soft: #636363;
+  --white: #ffffff;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--bg-creme);
+  color: var(--text-dark);
+  text-align: center;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.script-font {
+  font-family: 'Alex Brush', cursive;
+}
+
+/* Fon elementlari: Barglar effekti */
+.petal-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  background-color: #ffd1dc;
+  border-radius: 150% 0 150% 0;
+  opacity: 0.7;
+  pointer-events: none;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% { transform: translate(0, -10px) rotate(0deg); opacity: 0.8; }
+  100% { transform: translate(80px, 105vh) rotate(360deg); opacity: 0; }
+}
+
+/* Musiqa tugmasi */
+.music-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: var(--white);
+  border: 2px solid var(--gold-primary);
+  color: var(--gold-primary);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.music-btn.playing i {
+  animation: discSpin 2.5s linear infinite;
+}
+
+@keyframes discSpin {
+  100% { transform: rotate(360deg); }
+}
+
+/* Overlay & Konvert */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, #ffffff 0%, #ece5d8 100%);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), visibility 1s;
+}
+
+.overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.envelope-card {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(170, 130, 10, 0.15);
+  max-width: 90vw;
+  width: 380px;
+}
+
+.gold-frame {
+  border: 1.5px dashed var(--gold-primary);
+  border-radius: 12px;
+  padding: 25px 15px;
+}
+
+.envelope-card h1 {
+  font-size: 2.8rem;
+  color: var(--gold-primary);
+  line-height: 1.1;
+  margin: 15px 0;
+}
+
+.sub-lead {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 3px;
+  font-size: 0.8rem;
+  color: var(--text-soft);
+  text-transform: uppercase;
+}
+
+.tagline {
+  font-size: 0.95rem;
+  color: var(--text-soft);
+  margin-bottom: 25px;
+}
+
+.open-btn {
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+  color: var(--white);
+  border: none;
+  padding: 12px 32px;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(170, 130, 10, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.2s;
+}
+
+.open-btn:active {
+  transform: scale(0.95);
+}
+
+/* Asosiy qism */
+.main-container {
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 0;
+  color: var(--gold-primary);
+  font-size: 1.2rem;
+}
+
+.bismillah {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: var(--gold-dark);
+  margin-bottom: 20px;
+}
+
+.lead-text {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.invitation-body {
+  font-size: 0.95rem;
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+.couple-names {
+  font-size: 3.4rem;
+  color: var(--gold-primary);
+  margin: 15px 0;
+  line-height: 1.2;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 20px;
+}
+
+/* Taymer */
+.countdown-section {
+  margin: 40px 0;
+}
+
+.countdown-grid {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.time-box {
+  background: var(--white);
+  border: 1px solid var(--gold-light);
+  border-radius: 12px;
+  padding: 12px;
+  width: 68px;
+  box-shadow: var(--shadow);
+}
+
+.time-box span {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold-dark);
+}
+
+.time-box label {
+  font-size: 0.7rem;
+  color: var(--text-soft);
+  text-transform: uppercase;
+}
+
+/* Timeline (Dastur ketma-ketligi) */
+.program-section {
+  margin: 50px 0;
+}
+
+.timeline {
+  position: relative;
+  padding: 10px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 28px;
+  width: 2px;
+  background: var(--gold-light);
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.timeline-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--gold-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--gold-primary);
+  z-index: 2;
+  box-shadow: var(--shadow);
+  flex-shrink: 0;
+}
+
+.timeline-content {
+  background: var(--white);
+  padding: 15px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  margin-left: 20px;
+  flex-grow: 1;
+  box-shadow: var(--shadow);
+}
+
+.timeline-content h4 {
+  font-size: 0.95rem;
+  margin-bottom: 3px;
+  color: var(--text-dark);
+}
+
+.timeline-content p {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+}
+
+/* Xarita oynasi */
+.map-section {
+  margin: 50px 0;
+}
+
+.map-container {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 2px solid var(--gold-light);
+  height: 250px;
+  margin-bottom: 20px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.map-direct-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--white);
+  color: var(--gold-dark);
+  border: 1.5px solid var(--gold-primary);
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.map-direct-btn:hover {
+  background-color: var(--gold-primary);
+  color: var(--white);
+}
+
+.footer {
+  margin-top: 60px;
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  font-style: italic;
+}
